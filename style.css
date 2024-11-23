@@ -12,7 +12,6 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 0 10px;
 }
 
 .nav-logo {
@@ -36,6 +35,7 @@
 }
 
 /** box2 **/
+
 .add-first {
     color: #cccccc;
     font-size: 0.85rem;
@@ -54,11 +54,12 @@
 }
 
 /** box3 **/
+
 .nav-search {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: white;
+    background-color: White;
     margin-left: 25px;
     width: 620px;
     height: 40px;
@@ -100,6 +101,7 @@
 }
 
 /** box4 **/
+
 span {
     font-size: 0.7rem;
 }
@@ -110,6 +112,7 @@ span {
 }
 
 /** box6 **/
+
 .nav-cart {
     font-size: 0.85rem;
     font-weight: 700;
@@ -127,8 +130,6 @@ span {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    overflow-x: auto;
-    white-space: nowrap;
 }
 
 .panel-ops {
@@ -145,7 +146,6 @@ span {
 .hero-section {
     background-image: url('image/hero_section.jpg');
     background-size: cover;
-    background-position: center;
     height: 350px;
     display: flex;
     justify-content: center;
@@ -153,8 +153,7 @@ span {
 }
 
 .hero-message {
-    height: auto;
-    min-height: 40px;
+    height: 40px;
     background-color: white;
     color: black;
     display: flex;
@@ -164,8 +163,11 @@ span {
     width: 90%;
     margin-bottom: 25px;
     border-radius: 30px;
-    padding: 10px;
-    text-align: center;
+}
+
+.hero-message a {
+    text-decoration: none;
+    color: #007185;
 }
 
 /** shop section **/
@@ -174,24 +176,38 @@ span {
     flex-wrap: wrap;
     justify-content: space-evenly;
     background-color: #e2e7e6;
-    padding: 20px;
+    padding-bottom: 20px;
 }
 
 .box {
     border-radius: 10px;
-    height: auto;
-    min-height: 410px;
+    height: 410px;
     width: 23%;
     background-color: white;
-    padding: 15px;
-    margin: 10px;
+    padding: 15px 0px 15px;
+    margin-top: 25px;
+}
+
+h2 {
+    font-size: 20px;
 }
 
 .box-img {
     height: 300px;
     border-radius: 10px;
-    margin: 1rem 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     background-size: cover;
+}
+
+.box-content {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.box-content p {
+    color: #007185;
+    font-size: 14px;
 }
 
 /** footer **/
@@ -208,70 +224,116 @@ span {
 .foot-panel2 {
     background-color: #222f3d;
     color: white;
-    padding: 20px;
+    height: 350px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
 ul {
-    margin: 20px;
-    min-width: 200px;
+    margin-top: 20px;
+}
+
+ul a {
+    display: block;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    color: #dddddd;
+    text-decoration: none;
+}
+
+ul a:hover {
+    text-decoration: underline;
+}
+
+.foot-panel3 {
+    background-color: #222f3d;
+    color: white;
+    border-top: 0.5px solid white;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    background-image: url(image/Amazon_logo.png);
+    background-size: cover;
+    height: 60px;
+    width: 120px;
 }
 
 .foot-panel4 {
     background-color: #0f1111;
     color: white;
-    padding: 20px;
+    height: 70px;
     font-size: 0.7rem;
     text-align: center;
 }
 
-/* Media Queries for Responsiveness */
+.pages {
+    padding-top: 25px;
+}
+
+.copyright {
+    padding-top: 5px;
+}
+
+/* Media Queries */
 @media screen and (max-width: 1200px) {
+    .nav-search {
+        width: 480px;
+    }
+    
     .box {
         width: 30%;
+    }
+
+    .panel-ops p {
+        margin-left: 5px;
     }
 }
 
 @media screen and (max-width: 992px) {
     .nav-search {
-        width: 400px;
+        width: 350px;
     }
     
     .box {
         width: 45%;
     }
-
-    .nav-signin, .nav-return {
+    
+    .nav-address {
         display: none;
+    }
+    
+    .panel-ops p {
+        font-size: 0.7rem;
     }
 }
 
 @media screen and (max-width: 768px) {
     .navbar {
         justify-content: space-between;
+        padding: 0 10px;
     }
-
+    
     .nav-search {
-        width: 300px;
+        width: 280px;
+        margin-left: 10px;
     }
-
-    .nav-address {
+    
+    .nav-signin, .nav-return {
         display: none;
     }
-
-    .box {
-        width: 90%;
+    
+    .panel {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 0 10px;
     }
-
-    .foot-panel2 {
-        height: auto;
-    }
-
-    ul {
-        width: 100%;
-        text-align: center;
+    
+    .panel-ops {
+        white-space: nowrap;
     }
 }
 
@@ -279,23 +341,34 @@ ul {
     .nav-search {
         display: none;
     }
-
-    .panel-ops p {
-        font-size: 0.7rem;
-        margin-left: 5px;
+    
+    .box {
+        width: 90%;
     }
-
+    
     .hero-message {
-        font-size: 0.7rem;
         width: 95%;
+        padding: 0 10px;
+    }
+    
+    .foot-panel2 {
+        height: auto;
+        padding: 20px;
+        flex-direction: column;
+    }
+    
+    ul {
+        margin: 10px 0;
+    }
+}
+
+/* Fix for very small screens */
+@media screen and (max-width: 350px) {
+    .nav-logo {
+        width: 100px;
     }
     
     .box {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .foot-panel2 {
-        padding: 10px;
+        width: 95%;
     }
 }
